@@ -1,0 +1,63 @@
+# ─── Python ───────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+.env
+*.env
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# ─── Terraform ────────────────────────────────────────
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform.lock.hcl
+*.tfvars          # may contain secrets — never commit
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# ─── Docker ───────────────────────────────────────────
+*.dockerignore    # keep project-level one, ignore accidental extras
+
+# ─── Kubernetes / Helm ────────────────────────────────
+kubeconfig
+*.kubeconfig
+helm/*/charts/*.tgz  # downloaded chart dependencies
+
+# ─── AWS / Secrets ────────────────────────────────────
+*.pem
+*.key
+.aws/
+aws-exports.js
+
+# ─── OS / Editor ──────────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# ─── Misc ─────────────────────────────────────────────
+*.log
+*.zip
+*.tar.gz
+node_modules/
