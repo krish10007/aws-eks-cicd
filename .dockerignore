@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+.venv/
+venv/
+
+# Terraform
+terraform/
+.terraform/
+*.tfstate
+
+# Helm
+helm/
+
+# Git
+.git/
+.gitignore
+
+# CI
+.github/
+
+# Docs
+docs/
+k6/
+k8s/
+
+# Misc
+*.md
+.DS_Store
