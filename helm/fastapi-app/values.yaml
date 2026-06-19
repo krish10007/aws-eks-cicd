@@ -1,0 +1,36 @@
+replicaCount: 2
+
+image:
+  repository: 148761647179.dkr.ecr.us-east-1.amazonaws.com/aws-eks-cicd-app
+  tag: "v0.1.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8000
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+  host: ""  # leave blank for now — ALB assigns a DNS name automatically
+
+resources:
+  requests:
+    cpu: 100m      # 100 millicores — 0.1 of a CPU core
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 256Mi
+
+hpa:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50
+
+env:
+  APP_VERSION: "1.0.0"
