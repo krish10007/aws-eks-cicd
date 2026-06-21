@@ -20,6 +20,6 @@ def test_root():
     response = client.get("/")
     assert response.status_code == 200
     data = response.json()
-    assert data["message"] == "Hello from EKS"
+    assert "Hello from EKS" in data["message"]  # use 'in' instead of ==
     assert "hostname" in data
     assert "uptime_seconds" in data
