@@ -44,7 +44,7 @@ def root():
     to confirm multiple pods are serving traffic.
     """
     return {
-        "message": "Hello from EKS",
+        "message": "Hello from EKS - deployed via CI/CD",,
         "hostname": socket.gethostname(),   # pod name in Kubernetes
         "pod_ip": socket.gethostbyname(socket.gethostname()),
         "uptime_seconds": round(time.time() - START_TIME, 2),
